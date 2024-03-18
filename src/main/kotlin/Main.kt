@@ -1,5 +1,7 @@
 package org.example
 
+import com.google.gson.Gson
+import java.awt.SystemColor.info
 import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
@@ -12,11 +14,14 @@ fun main() {
         .build()
     val response = client
         .send(request, BodyHandlers.ofString())
-
     val json = response.body()
-    val myGame = Games()
-    myGame.title = "Batman: Arkham Asylum Game of the Year Edition"
-    myGame.image = "https:\\/\\/cdn.cloudflare.steamstatic.com\\/steam\\/apps\\/35140\\/capsule_sm_120.jpg?t=1702934705"
-    println(json)
+
+    val gson = Gson()
+
+    val myInfoGaming = gson.fromJson(json, InfoGames::class.java)
+
+    val myGame = Games(
+        myInfoGaming.info.title,
+        myInfoGaming.info.thumb)
     println(myGame)
 }
