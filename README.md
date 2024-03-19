@@ -8,7 +8,6 @@
     - Id;
     - Data de nascimento.
   - Buscar por jogos que estão inclusos na API atráves do seu ID.
-  - Gerenciamento com Maven
 ## 📖Conhecimentos adquiridos durante a formação
 - Orientação a objetos;
 - Requisição de Api http;
@@ -16,4 +15,5 @@
 - Data classes;
 - Exceptions e tratamentos de expressões nulas;
 - Extensios functions;
-- Scope functions.
+- Scope functions;
+- Gerenciamento com Maven.
