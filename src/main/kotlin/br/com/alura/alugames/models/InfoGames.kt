@@ -1,4 +1,4 @@
-package org.example
+package org.example.br.com.alura.alugames.models
 
 data class InfoGames(val info: InfoApiShark) {
 
