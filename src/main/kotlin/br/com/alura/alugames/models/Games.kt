@@ -5,6 +5,9 @@ data class Games(
 ) {
     var description:String? = null
     override fun toString(): String {
-        return "Meu Jogo \n Título: $title \n imagem: $thumb \n descrição: $description"
+        return "\nMeu Jogo: \n" +
+                "Título: $title \n" +
+                "imagem: $thumb \n" +
+                "descrição: $description "
     }
 }
