@@ -12,6 +12,7 @@ fun main() {
     val searchApi = ApiConsumption()
     val infoGame = searchApi.searchGame(search)
 
+
     var myGame: Games? = null
     var result = runCatching {
         myGame = Games(
@@ -31,7 +32,6 @@ fun main() {
             println("Descrição personalizada: ")
             val personalizedDescription = reading.nextLine()
             myGame?.description = personalizedDescription
-
         } else {
             myGame?.description = myGame?.title
         }

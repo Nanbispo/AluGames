@@ -10,8 +10,6 @@ import java.net.http.HttpResponse
 class ApiConsumption {
     fun searchGame(id: String): InfoGames{
         val addres = "https://www.cheapshark.com/api/1.0/games?id=$id"
-
-
         val client: HttpClient = HttpClient.newHttpClient()
         val request = HttpRequest.newBuilder()
             .uri(URI.create(addres))
