@@ -9,4 +9,7 @@ fun main (){
 
     val gamesList = consume.searchGame("151")
     println(gamesList)
+
+    val gamesJson = consume.searchGameJson()
+    println(gamesJson)
 }
