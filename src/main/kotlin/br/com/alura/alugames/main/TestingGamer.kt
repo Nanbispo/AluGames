@@ -1,4 +1,4 @@
-import br.com.alura.alugames.models.Gamer
+import br.com.alura.alugames.models.users.Gamer
 
 fun main (){
     val gamer1 = Gamer("Maria", "maria@gmail.com")

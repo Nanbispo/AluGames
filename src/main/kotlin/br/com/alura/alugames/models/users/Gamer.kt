@@ -1,4 +1,4 @@
-package br.com.alura.alugames.models
+package br.com.alura.alugames.models.users
 
 import org.example.br.com.alura.alugames.models.Games
 import java.util.*

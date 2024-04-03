@@ -1,6 +1,6 @@
 package org.example.br.com.alura.alugames.main
 
-import br.com.alura.alugames.models.Gamer
+import br.com.alura.alugames.models.users.Gamer
 import br.com.alura.alugames.services.ApiConsumption
 import org.example.br.com.alura.alugames.models.Games
 import turnsIntoAge
@@ -83,43 +83,3 @@ fun main() {
 
     println("Busca finalizada com sucesso!")
 }
-
-
-    //Solução feita para tratar um erro que não abordado no curso por conta de uma atualização da API que foi utilizada.
-    // Erro de Json que retornava vazio.
-
-//    var meuInfoJogo: InfoGames = InfoGames(InfoApiShark("", ""))
-//    val resultadoMeuInfoJogo = runCatching {
-//        meuInfoJogo = gson.fromJson(json, InfoGames::class.java)
-//    }
-//
-//    resultadoMeuInfoJogo.onFailure {
-//        println("Retorno Inválido. Tente outro id.")
-//    }
-//
-//    resultadoMeuInfoJogo.onSuccess {
-//        var meuJogo: Games
-//        val resultado = runCatching {
-//            meuJogo = Games(meuInfoJogo.info.title, meuInfoJogo.info.thumb)
-//
-//            println(meuJogo)
-//        }
-//
-//        resultado.onFailure {
-//            println("Jogo inexistente. Tente outro id.")
-//        }
-//
-//        resultado.onSuccess {
-//            println("Deseja inserir uma descrição personalizada? S/N")
-//            val opcao = reading.nextLine()
-//            if (opcao.equals("s", true)) {
-//                println("Insira a descrição personalizada para o jogo:")
-//                val descricao = reading.nextLine()
-//                println("sua descrição: $descricao")
-//            } else {
-//                println("sem descrição")
-//            }
-//
-//        }
-//    }
-//}

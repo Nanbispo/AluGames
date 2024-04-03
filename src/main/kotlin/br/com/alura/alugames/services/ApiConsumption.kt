@@ -1,8 +1,8 @@
 package br.com.alura.alugames.services
 
-import br.com.alura.alugames.models.Gamer
+import br.com.alura.alugames.models.users.Gamer
 import br.com.alura.alugames.models.InfoGameJson
-import br.com.alura.alugames.models.InfoGamerJson
+import br.com.alura.alugames.models.users.InfoGamerJson
 import br.com.alura.alugames.utilitys.createGame
 import br.com.alura.alugames.utilitys.createGamer
 import com.google.gson.Gson
