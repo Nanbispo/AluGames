@@ -4,6 +4,7 @@ import br.com.alura.alugames.models.Period
 import br.com.alura.alugames.models.Plan
 import br.com.alura.alugames.models.Rent
 import br.com.alura.alugames.models.separatePlan
+import br.com.alura.alugames.repositories.Recommendable
 import org.example.br.com.alura.alugames.models.Games
 import java.time.LocalDate
 import java.util.*
@@ -13,7 +14,7 @@ import kotlin.random.Random
 data class Gamer(
     var name: String,
     var email: String
-) {
+): Recommendable {
     var birthData: String? = null
     var user: String? = null
         set(value) {
@@ -28,6 +29,14 @@ data class Gamer(
     var plan : Plan = separatePlan("BRONZE")
     val gamesSearched = mutableListOf<Games?>()
     val rentendGames = mutableListOf<Rent>()
+    private val listNotes = mutableListOf<Int>()
+
+    override val average: Double
+        get() = listNotes.average();
+
+    override fun toRecommend(note: Int) {
+        listNotes.add(note)
+    }
 
     constructor(name: String, email: String, birthData: String, user: String) :
             this(name, email) {
@@ -52,7 +61,12 @@ data class Gamer(
     }
 
     override fun toString(): String {
-        return "Gamer(name='$name', email='$email', birthData=$birthData, user=$user, internalId=$internalId)"
+        return "Gamer(name= $name, " +
+                "email= $email, " +
+                "birthData= $birthData, " +
+                "user= $user, " +
+                "internalId= $internalId, " +
+                "Reputação: $average)"
     }
 
     fun createInternalId() {
