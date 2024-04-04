@@ -24,6 +24,7 @@ data class Gamer(
         private set
 
     val gamesSearched = mutableListOf<Games?>()
+    val rentendGames = mutableListOf<Rent>()
 
     constructor(name: String, email: String, birthData: String, user: String) :
             this(name, email) {
@@ -39,8 +40,12 @@ data class Gamer(
         this.email = validateEmail()
     }
 
+
     fun rentGame(game: Games, period: Period): Rent {
-        return Rent(this, game, period)
+
+        val rent = Rent(this, game, period)
+        rentendGames.add(rent)
+        return rent
     }
 
     override fun toString(): String {
