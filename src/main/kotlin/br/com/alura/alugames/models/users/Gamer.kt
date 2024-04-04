@@ -1,6 +1,7 @@
 package br.com.alura.alugames.models.users
 
 import br.com.alura.alugames.models.Period
+import br.com.alura.alugames.models.Plan
 import br.com.alura.alugames.models.Rent
 import br.com.alura.alugames.models.separatePlan
 import org.example.br.com.alura.alugames.models.Games
@@ -24,7 +25,7 @@ data class Gamer(
     var internalId: String? = null
         private set
 
-    val plan : separatePlan = separatePlan("BRONZE")
+    var plan : Plan = separatePlan("BRONZE")
     val gamesSearched = mutableListOf<Games?>()
     val rentendGames = mutableListOf<Rent>()
 
