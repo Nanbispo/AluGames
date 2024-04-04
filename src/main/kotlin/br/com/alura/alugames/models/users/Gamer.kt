@@ -1,5 +1,6 @@
 package br.com.alura.alugames.models.users
 
+import br.com.alura.alugames.models.Period
 import br.com.alura.alugames.models.Rent
 import org.example.br.com.alura.alugames.models.Games
 import java.time.LocalDate
@@ -38,8 +39,8 @@ data class Gamer(
         this.email = validateEmail()
     }
 
-    fun rentGame(game: Games, initialDate: LocalDate, finalDate: LocalDate): Rent {
-        return Rent(this, game, initialDate, finalDate)
+    fun rentGame(game: Games, period: Period): Rent {
+        return Rent(this, game, period)
     }
 
     override fun toString(): String {

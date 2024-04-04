@@ -23,7 +23,7 @@ data class Games(
         return "\nMeu Jogo: \n" +
                 "Título: $title \n" +
                 "imagem: $thumb \n" +
-                "descrição: $description " +
-                "preco: $preco"
+                "descrição: $description \n" +
+                "preço: $preco"
     }
 }
