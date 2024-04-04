@@ -32,20 +32,20 @@ fun main() {
     println(jogador.rentendGames)
 
     val jogadora = gamersList.get(5)
-    //jogadora.plan = subscriptionPlan("PRATA", 9.90, 3)
+    jogadora.plan = subscriptionPlan("PRATA", 9.90, 3, 0.15)
     jogadora.rentGame(jogo, periodo1)
     jogadora.rentGame(jogo2, periodo2)
     jogadora.rentGame(jogo3, periodo3)
     jogadora.rentGame(jogo3, periodo3)
 
-    println(jogadora.rentendGames)
+
 
     jogadora.toRecommend(10)
     jogadora.toRecommend(8)
     jogadora.toRecommend(7)
     println(jogadora)
-
-    jogadora.rentGame(jogo, periodo1)
+    println(jogadora.rentendGames)
+    //jogadora.rentGame(jogo, periodo1)
     println(jogadora.rentendGames)
 
 
