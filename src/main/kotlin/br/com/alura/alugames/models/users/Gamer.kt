@@ -30,12 +30,17 @@ data class Gamer(
     val gamesSearched = mutableListOf<Games?>()
     val rentendGames = mutableListOf<Rent>()
     private val listNotes = mutableListOf<Int>()
+    var recommendedGames = mutableListOf<Games>()
 
     override val average: Double
         get() = listNotes.average();
 
     override fun toRecommend(note: Int) {
         listNotes.add(note)
+    }
+    fun toRecommendedGame (game: Games, note: Int){
+        game.toRecommend(note)
+        recommendedGames.add(game)
     }
 
     constructor(name: String, email: String, birthData: String, user: String) :
@@ -53,6 +58,8 @@ data class Gamer(
     }
 
 
+
+
     fun rentGame(game: Games, period: Period): Rent {
 
         val rent = Rent(this, game, period)
@@ -61,7 +68,7 @@ data class Gamer(
     }
 
     override fun toString(): String {
-        return "Gamer(name= $name, " +
+        return "Gamer (name= $name, " +
                 "email= $email, " +
                 "birthData= $birthData, " +
                 "user= $user, " +

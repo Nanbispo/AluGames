@@ -1,11 +1,12 @@
 package org.example.br.com.alura.alugames.models
 
 import br.com.alura.alugames.repositories.Recommendable
+import com.google.gson.annotations.Expose
 import jdk.jfr.Description
 
 data class Games(
-    var title: String,
-    var thumb: String
+    @Expose var title: String,
+    @Expose var thumb: String
 ) : Recommendable {
     var description: String? = null
     var preco = 0.0
