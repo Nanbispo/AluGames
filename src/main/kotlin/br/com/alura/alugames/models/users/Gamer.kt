@@ -2,6 +2,7 @@ package br.com.alura.alugames.models.users
 
 import br.com.alura.alugames.models.Rent
 import org.example.br.com.alura.alugames.models.Games
+import java.time.LocalDate
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.random.Random
@@ -37,8 +38,8 @@ data class Gamer(
         this.email = validateEmail()
     }
 
-    fun rentGame(game: Games): Rent {
-        return Rent(this, game)
+    fun rentGame(game: Games, initialDate: LocalDate, finalDate: LocalDate): Rent {
+        return Rent(this, game, initialDate, finalDate)
     }
 
     override fun toString(): String {
