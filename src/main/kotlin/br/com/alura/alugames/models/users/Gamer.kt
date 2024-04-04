@@ -1,7 +1,9 @@
 package br.com.alura.alugames.models.users
 
+import br.com.alura.alugames.models.Rent
 import org.example.br.com.alura.alugames.models.Games
 import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.random.Random
 
 data class Gamer(
@@ -12,7 +14,7 @@ data class Gamer(
     var user: String? = null
         set(value) {
             field = value
-            if (internalId.isNullOrBlank()){
+            if (internalId.isNullOrBlank()) {
                 createInternalId()
             }
         }
@@ -23,17 +25,22 @@ data class Gamer(
 
     constructor(name: String, email: String, birthData: String, user: String) :
             this(name, email) {
-                this.birthData = birthData
-                this.user = user
-                createInternalId()
+        this.birthData = birthData
+        this.user = user
+        createInternalId()
     }
 
     init {
-        if (name.isNullOrBlank()){
+        if (name.isNullOrBlank()) {
             throw IllegalArgumentException("Nome não pode estar em branco.")
         }
         this.email = validateEmail()
     }
+
+    fun rentGame(game: Games): Rent {
+        return Rent(this, game)
+    }
+
     override fun toString(): String {
         return "Gamer(name='$name', email='$email', birthData=$birthData, user=$user, internalId=$internalId)"
     }
@@ -44,15 +51,16 @@ data class Gamer(
         internalId = "$user#$number"
     }
 
-    fun validateEmail():String {
+    fun validateEmail(): String {
         val regex = Regex("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$")
-        if (regex.matches(email)){
+        if (regex.matches(email)) {
             return email
         } else {
             throw IllegalArgumentException("Email inválido.")
         }
     }
-    companion object{
+
+    companion object {
         fun createGamer(reading: Scanner): Gamer {
             println("Boas vindas ao AluGames! Vamos fazer seu cadastro. Digite seu nome:")
             val name = reading.nextLine()
