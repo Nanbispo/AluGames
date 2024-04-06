@@ -1,4 +1,7 @@
-package br.com.alura.alugames.models
+package br.com.alura.alugames.models.plans
+
+import br.com.alura.alugames.models.plans.Plan
+import br.com.alura.alugames.models.plans.Rent
 
 class subscriptionPlan(
     type: String,
@@ -14,7 +17,7 @@ class subscriptionPlan(
         } else {
             var originalValue = super.getValue(rent)
             if (rent.gamer.average > 8){
-                originalValue = originalValue * percentageDiscountReputation
+                originalValue *= percentageDiscountReputation
             }
             originalValue
         }

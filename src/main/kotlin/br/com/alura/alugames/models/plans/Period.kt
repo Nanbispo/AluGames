@@ -1,4 +1,4 @@
-package br.com.alura.alugames.models
+package br.com.alura.alugames.models.plans
 
 import java.time.LocalDate
 import java.time.Period

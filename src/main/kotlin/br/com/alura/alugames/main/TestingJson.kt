@@ -1,7 +1,7 @@
 package br.com.alura.alugames.main
 
-import br.com.alura.alugames.models.Period
-import br.com.alura.alugames.models.subscriptionPlan
+import br.com.alura.alugames.models.plans.Period
+import br.com.alura.alugames.models.plans.subscriptionPlan
 import br.com.alura.alugames.services.ApiConsumption
 import com.google.gson.GsonBuilder
 import java.io.File

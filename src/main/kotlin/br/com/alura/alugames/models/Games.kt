@@ -37,6 +37,7 @@ data class Games(
                 "Título: $title \n" +
                 "imagem: $thumb \n" +
                 "descrição: $description \n" +
-                "preço: $preco"
+                "preço: $preco \n" +
+                "nota $average"
     }
 }
